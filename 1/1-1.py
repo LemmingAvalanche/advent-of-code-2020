@@ -1,4 +1,4 @@
-#!/usr/bin/env /usr/bin/python
+#!/usr/bin/env /usr/bin/python3
 
 # Thanks to Rudolph: https://codereview.stackexchange.com/a/12449
 def read_integers(filename):
