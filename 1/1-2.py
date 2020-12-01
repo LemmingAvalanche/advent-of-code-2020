@@ -34,12 +34,12 @@ def duck():
     dsints = list(OrderedDict.fromkeys(sorted(ints)))
     for first in dsints:
         for second in dsints:
-            result = bin(dsints, first, second, 2020)
+            result = bin_duck(dsints, first, second, 2020)
             if result == 0:
                 return
 
 # Shameless: https://careerkarma.com/blog/binary-search-python/
-def bin(lst, first, second, goal):
+def bin_duck(lst, first, second, goal):
     low = 0
     high = len(lst) - 1
     while low <= high:
@@ -55,4 +55,41 @@ def bin(lst, first, second, goal):
             low = middle + 1
     return -1
 
-duck()
+# With time(1) A little slower than horse and a lot slower than duck!
+def manatee():
+    goal = 2020
+    ints = read_integers("input.txt")
+    # Still: Really?
+    dsints = list(OrderedDict.fromkeys(sorted(ints)))
+    for first in dsints:
+        for second in dsints:
+            # prune
+            index = bin_manatee(dsints, [first], second)
+            if (dsints[index] == goal):
+                dsints = dsints[start, index-1]
+    for first in dsints:
+        for second in dsints:
+            # final search
+            result = bin_manatee(dsints, [first, second], 2020)
+            if result != -1:
+                print(first * second * dsints[result])
+                return
+
+# Shameless: https://careerkarma.com/blog/binary-search-python/
+# Returns index
+def bin_manatee(lst, list_for_sum, goal):
+    low = 0
+    high = len(lst) - 1
+    while low <= high:
+        middle = low + (high - low) // 2
+        current = lst[middle]
+        result = sum(list_for_sum) + current
+        if result == goal:
+            return middle
+        elif result > goal:
+            high = middle - 1
+        else:
+            low = middle + 1
+    return -1
+
+manatee()
