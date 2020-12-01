@@ -3,6 +3,9 @@
 # Copied over from 1-1.py
 # ---
 
+# This must demand a greedy algorithm, maybe dynamic programming...
+# but who can supply it?
+
 from collections import OrderedDict
 # Thanks to Rudolph: https://codereview.stackexchange.com/a/12449
 def read_integers(filename):
