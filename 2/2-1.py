@@ -10,8 +10,8 @@ def parse(filename):
 def check_psw(line):
     split_on_ws = line.split(" ");
     range = parse_range(split_on_ws[0])
-    at_least = int(range[0])
-    at_most = int(range[1])
+    at_least = range[0]
+    at_most = range[1]
     ch = parse_char(split_on_ws[1])
     psw = split_on_ws[2]
     count = psw.count(psw)
@@ -22,7 +22,7 @@ def check_psw(line):
 
 def parse_range(range):
     r = range.split("-")
-    return (r[0], r[1])
+    return (int(r[0]), int(r[1]))
 
 def parse_char(c):
     return c[0]
