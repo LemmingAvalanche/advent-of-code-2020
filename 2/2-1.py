@@ -14,7 +14,7 @@ def check_psw(line):
     at_most = range[1]
     ch = parse_char(split_on_ws[1])
     psw = split_on_ws[2]
-    count = psw.count(psw)
+    count = psw.count(ch)
     if count >= at_least and count <= at_most:
         return True
     else:
