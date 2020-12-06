@@ -1,10 +1,9 @@
 use std::fs;
-mod day5;
+mod day6;
 
 fn main() {
     let input = fs::read_to_string(
-        "<put path to input file here>")
+        "<path to input>")
         .unwrap();
-    let per = day5::input_generator(&input);
-    println!("{}", day5::solve_part1(&per));
+    println!("{}", day6::solve_part_1(&input));
 }
