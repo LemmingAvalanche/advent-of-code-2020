@@ -36,7 +36,7 @@ pub fn solve_part_2(input: &str) -> u64 {
 
 #[inline]
 fn count_yeses(answers: &[bool; MAX_SIZE]) -> u64 {
-    answers.iter().fold(0, |acc, b| acc + if *b { 1 } else { 0 })
+    answers.iter().fold(0, |acc, b| acc + (*b as u64))
 }
 
 // g: multi-line string, one answer per line
