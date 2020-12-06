@@ -7,7 +7,7 @@ pub fn solve_part_1(input: &str) -> u64 {
     for l in input.lines() {
         if l == "" {
             total += count_yeses(&answers);
-            reset_answers_any(&mut answers);
+            reset_answers(&mut answers, false);
         } else {
             questionaire_any(l, &mut answers);
         }
@@ -25,7 +25,7 @@ pub fn solve_part_2(input: &str) -> u64 {
     for l in input.lines() {
         if l == "" {
             total += count_yeses(&answers);
-            reset_answers_all(&mut answers);
+            reset_answers(&mut answers, true);
         } else {
             questionaire_all(l, &mut answers);
         }
@@ -58,15 +58,9 @@ fn questionaire_all(qs: &str, answers: &mut [bool; MAX_SIZE]) -> () {
     }
 }
 
-fn reset_answers_any(answers: &mut [bool; MAX_SIZE]) -> () {
+fn reset_answers(answers: &mut [bool; MAX_SIZE], value: bool) -> () {
     for i in 0..MAX_SIZE {
-        answers[i] = false;
-    }
-}
-
-fn reset_answers_all(answers: &mut [bool; MAX_SIZE]) -> () {
-    for i in 0..MAX_SIZE {
-        answers[i] = true;
+        answers[i] = value;
     }
 }
 
