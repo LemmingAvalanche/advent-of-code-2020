@@ -175,22 +175,13 @@ fn calculate_from_row_fbfbbfb() {
 }
 //
 #[test]
-fn calculcate_from_column_r() {
-    let first = calculate_from_column(Range::new_column(), Column::Right);
-    assert_eq!(Range {lower: 4, upper: 7}, first)
-}
-#[test]
-fn calculcate_from_column_rl() {
-    let first = calculate_from_column(Range::new_column(), Column::Right);
-    let second = calculate_from_column(first, Column::Left);
-    assert_eq!(Range {lower: 4, upper: 5}, second)
-}
-#[test]
 fn calculcate_from_column_rlr() {
     let first = calculate_from_column(Range::new_column(), Column::Right);
+    assert_eq!(Range {lower: 4, upper: 7}, first);
     let second = calculate_from_column(first, Column::Left);
+    assert_eq!(Range {lower: 4, upper: 5}, second);
     let third = calculate_from_column(second, Column::Right);
-    assert_eq!(Range {lower: 5, upper: 5}, third)
+    assert_eq!(Range {lower: 5, upper: 5}, third);
 }
 //
 #[test]
