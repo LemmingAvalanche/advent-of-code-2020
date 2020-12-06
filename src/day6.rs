@@ -115,12 +115,6 @@ fn questionaire_all_abc() {
     questionaire_all(&"abc", &mut work);
     assert_eq!(answer, work);
 }
-fn questionaire_all_a_b_c() {
-    let answer = [false; MAX_SIZE];
-    let mut work = [true; MAX_SIZE];
-    questionaire_all(&"a\nb\nc\n", &mut work);
-    assert_eq!(answer, work);
-}
 #[test]
 fn count_yeses_abcx() {
     let mut work = [false; MAX_SIZE];
