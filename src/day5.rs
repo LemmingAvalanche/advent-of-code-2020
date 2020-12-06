@@ -10,19 +10,9 @@ pub enum Column {
     Right,
 }
 
-pub struct Seat {
-    row: u32,
-    col: u32,
-}
-
 pub struct Rs([Row; 7]);
 
 pub struct Cs([Column; 3]);
-
-pub struct BoardingPass {
-    rs: Rs,
-    cs: Cs,
-}
 
 #[derive(Copy, Clone, Debug, PartialEq)]
 pub struct Range {
