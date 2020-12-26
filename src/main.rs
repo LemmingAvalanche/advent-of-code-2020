@@ -1,5 +1,5 @@
 use std::fs;
-mod day6;
+mod day18;
 
 fn main() {
     // I just update this function for each problem that I bother to solve,
@@ -7,5 +7,5 @@ fn main() {
     let input = fs::read_to_string(
         "<path to input>")
         .unwrap();
-    println!("{}", day6::solve_part_2(&input));
+    println!("{}", day18::sum_lines(&input));
 }
